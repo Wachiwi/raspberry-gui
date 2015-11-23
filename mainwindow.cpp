@@ -19,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent) :
 }
 
 /**
- * Generic deconstructor that terminates the live plotter and the ui.
+ * Generic destructor that terminates the live plotter and the ui.
  * Gets called when the application gets terminated.
  * @brief MainWindow::~MainWindow
  */

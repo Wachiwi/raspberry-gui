@@ -8,7 +8,7 @@
 LiveFilePlotter::LiveFilePlotter(QObject *parent) : QThread(parent) {}
 
 /**
- * Default desconstructor.
+ * Default destructor.
  * @brief LiveFilePlotter::~LiveFilePlotter
  */
 LiveFilePlotter::~LiveFilePlotter() {}
