@@ -18,7 +18,7 @@ class MainWindow : public QMainWindow {
     Q_OBJECT
 
 signals:
-    void changeFile(QString fname, QCustomPlot *plot);
+    void changeFile(QString, QCustomPlot*, QLabel*);
 
 public:
     explicit MainWindow(QWidget *parent = 0);

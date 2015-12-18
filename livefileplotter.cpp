@@ -19,9 +19,10 @@ LiveFilePlotter::~LiveFilePlotter() {}
  * @param fname The name of the new file.
  * @param plot Pointer to the original plot.
  */
-void LiveFilePlotter::changeFile(QString fname, QCustomPlot *plot){
+void LiveFilePlotter::changeFile(QString fname, QCustomPlot *plot, QLabel *label){
     this->fname = fname;
     this->plot = plot;
+    this->label = label;
 }
 
 /**
@@ -82,6 +83,8 @@ void LiveFilePlotter::run() {
                 this->plot->graph(0)->setData(x, y);
                 this->plot->xAxis->setRange(0, y.size());
                 this->plot->replot();
+
+                this->label->setText(QString::number(y.last()));
 
                 // Close the file to make sure no *_ACCESS errors occur
                 file->close();

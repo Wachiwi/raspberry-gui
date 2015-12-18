@@ -2,8 +2,8 @@
 
 /**
  * Default constructor
- * @brief MainWindow::MainWindow
- * @param parent
+ *
+ * @param parent Parent Object
  */
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -21,7 +21,6 @@ MainWindow::MainWindow(QWidget *parent) :
 /**
  * Generic destructor that terminates the live plotter and the ui.
  * Gets called when the application gets terminated.
- * @brief MainWindow::~MainWindow
  */
 MainWindow::~MainWindow() {
     this->livePlotter->terminate();
@@ -33,8 +32,7 @@ MainWindow::~MainWindow() {
 
 /**
  * Event handler that gets called when the 'Visaulize' button gets pressed.
- * It opens a file dialog, clears the plot area and emits the event 'changeFile()'.
- * @brief MainWindow::on_visualizeButton_clicked
+ * It opens a file dialog, clears the plot area and emits the event <changeFile()>.
  */
 void MainWindow::on_visualizeButton_clicked() {
     QString s = QFileDialog::getOpenFileName();
@@ -44,5 +42,5 @@ void MainWindow::on_visualizeButton_clicked() {
     this->ui->srf02Plot->yAxis->setLabel("Measured distance in cm");
     this->ui->srf02Plot->xAxis->setRange(0, 1);
     this->ui->srf02Plot->yAxis->setRange(15, 600);
-    emit changeFile(s, this->ui->srf02Plot);
+    emit changeFile(s, this->ui->srf02Plot, this->ui->last_value);
 }

@@ -21,7 +21,3 @@ HEADERS     +=  mainwindow.h \
     livefileplotter.h
 
 FORMS       +=  mainwindow.ui
-
-target.path =   /home/dschwarz/raspberry-gui
-
-INSTALLS    +=  target

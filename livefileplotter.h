@@ -26,11 +26,12 @@ public:
     void run();
 
 public slots:
-    void changeFile(QString fname, QCustomPlot *plot);
+    void changeFile(QString, QCustomPlot*, QLabel*);
 
 private:
     QString fname;
     QCustomPlot *plot;
+    QLabel *label;
 };
 
 #endif // LIVEFILEPLOTTER_H
